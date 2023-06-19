@@ -28,12 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Docs";
+            dgvListNote = new DataGridView();
+            label1 = new Label();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
+            btnAdd = new Button();
+            btnDelete = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvListNote).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvListNote
+            // 
+            dgvListNote.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListNote.Location = new Point(12, 76);
+            dgvListNote.Name = "dgvListNote";
+            dgvListNote.RowTemplate.Height = 25;
+            dgvListNote.Size = new Size(776, 256);
+            dgvListNote.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(121, 32);
+            label1.TabIndex = 1;
+            label1.Text = "Find Note";
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(139, 29);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(568, 23);
+            txtSearch.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(713, 30);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(75, 23);
+            btnSearch.TabIndex = 3;
+            btnSearch.Text = "search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.Location = new Point(163, 364);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(143, 61);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.Location = new Point(470, 364);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(143, 61);
+            btnDelete.TabIndex = 5;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // Docs
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnDelete);
+            Controls.Add(btnAdd);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
+            Controls.Add(label1);
+            Controls.Add(dgvListNote);
+            Name = "Docs";
+            Text = "Docs";
+            ((System.ComponentModel.ISupportInitialize)dgvListNote).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private DataGridView dgvListNote;
+        private Label label1;
+        private TextBox txtSearch;
+        private Button btnSearch;
+        private Button btnAdd;
+        private Button btnDelete;
     }
 }
