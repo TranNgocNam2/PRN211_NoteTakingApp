@@ -8,8 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
-
+using NoteTakingApp.Authentication.Login;
 
 namespace NoteTakingApp.Forms
 {
@@ -18,6 +17,7 @@ namespace NoteTakingApp.Forms
         List<global::Repository.Models.Task> taskList;
         TaskRepository taskRepository;
         private global::Repository.Models.Task todo;
+        private int UserId;
         public Todo()
         {
             InitializeComponent();
@@ -40,17 +40,20 @@ namespace NoteTakingApp.Forms
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            txtTitle.Text = "";
-            txtDescription.Text = "";
+
 
             try
             {
-                todo.Title = txtTitle.Text;
-                todo.Description = txtDescription.Text;
-                todo.DueDate = dateTimePicker.Value;
+                global::Repository.Models.Task todo2 = new global::Repository.Models.Task();
+                todo2.UserId = LoginForm.publicUserId;
+                todo2.Title = txtTitle.Text;
+                todo2.Description = txtDescription.Text;
+                todo2.DueDate = dateTimePicker.Value;
+                todo2.Completed = false;
 
-                taskRepository.Create(todo);
+                taskRepository.Create(todo2);
                 dgvTasks.DataSource = taskRepository.GetAll();
+
                 MessageBox.Show("added successfully!");
 
             }
@@ -90,6 +93,19 @@ namespace NoteTakingApp.Forms
                 txtTitle.Text = todo.Title;
                 txtDescription.Text = todo.Description;
                 dateTimePicker.Value = todo.DueDate.Value;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(todo != null)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this todo?", "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    taskRepository.Delete(todo);
+                    dgvTasks.DataSource = taskRepository.GetAll() ;
+                }
             }
         }
     }

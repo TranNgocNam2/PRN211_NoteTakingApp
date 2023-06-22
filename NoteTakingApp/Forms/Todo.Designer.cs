@@ -59,6 +59,7 @@
             btnDelete.TabIndex = 20;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnEdit
             // 
@@ -83,6 +84,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(12, 106);
             label3.Name = "label3";
             label3.Size = new Size(68, 20);
@@ -92,6 +94,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(1, 56);
             label2.Name = "label2";
             label2.Size = new Size(85, 20);
@@ -101,6 +104,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(22, 11);
             label1.Name = "label1";
             label1.Size = new Size(38, 20);
