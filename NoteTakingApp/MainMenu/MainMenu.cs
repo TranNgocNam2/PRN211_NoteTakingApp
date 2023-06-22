@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using NoteTakingApp.Authentication.Login;
 using NoteTakingApp.Forms;
 
 namespace NoteTakingApp.MainMenu
@@ -19,14 +20,15 @@ namespace NoteTakingApp.MainMenu
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        private String userName;
 
-        public MainMenu()
+        public MainMenu(String username)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
-
+            this.userName = username;
         }
 
         //Methods
