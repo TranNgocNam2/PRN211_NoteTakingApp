@@ -140,6 +140,6 @@ namespace NoteTakingApp.MainMenu
             Reset();
         }
 
-      
+
     }
 }

@@ -138,11 +138,11 @@
             // 
             // btnHome
             // 
-            btnHome.Image = Properties.Resources._1;
-            btnHome.Location = new Point(12, 13);
+            btnHome.Image = Properties.Resources.NOTER_removebg_preview__1_;
+            btnHome.Location = new Point(3, 0);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(192, 62);
-            btnHome.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnHome.Size = new Size(217, 119);
+            btnHome.SizeMode = PictureBoxSizeMode.Zoom;
             btnHome.TabIndex = 0;
             btnHome.TabStop = false;
             btnHome.Click += btnHome_Click_1;
@@ -159,11 +159,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources._11;
-            pictureBox1.Location = new Point(192, 136);
+            pictureBox1.Image = Properties.Resources.NOTER_removebg_preview__1_;
+            pictureBox1.Location = new Point(128, 130);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(192, 62);
+            pictureBox1.Size = new Size(377, 155);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;

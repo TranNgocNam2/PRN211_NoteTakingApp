@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnSave = new Button();
+            btnDone = new Button();
             btnDelete = new Button();
             btnEdit = new Button();
             btnNew = new Button();
@@ -42,14 +42,14 @@
             ((System.ComponentModel.ISupportInitialize)dgvTasks).BeginInit();
             SuspendLayout();
             // 
-            // btnSave
+            // btnDone
             // 
-            btnSave.Location = new Point(650, 77);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(94, 29);
-            btnSave.TabIndex = 21;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnDone.Location = new Point(650, 77);
+            btnDone.Name = "btnDone";
+            btnDone.Size = new Size(94, 29);
+            btnDone.TabIndex = 21;
+            btnDone.Text = "Done";
+            btnDone.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
@@ -68,6 +68,7 @@
             btnEdit.TabIndex = 19;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnNew
             // 
@@ -77,6 +78,7 @@
             btnNew.TabIndex = 18;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // label3
             // 
@@ -137,6 +139,7 @@
             dgvTasks.RowTemplate.Height = 29;
             dgvTasks.Size = new Size(798, 288);
             dgvTasks.TabIndex = 11;
+            dgvTasks.CellContentDoubleClick += dgvTasks_CellContentDoubleClick;
             // 
             // Todo
             // 
@@ -144,7 +147,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 34, 74);
             ClientSize = new Size(800, 450);
-            Controls.Add(btnSave);
+            Controls.Add(btnDone);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(btnNew);
@@ -164,7 +167,7 @@
 
         #endregion
 
-        private Button btnSave;
+        private Button btnDone;
         private Button btnDelete;
         private Button btnEdit;
         private Button btnNew;
