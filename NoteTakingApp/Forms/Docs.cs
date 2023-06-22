@@ -59,6 +59,9 @@ namespace NoteTakingApp.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            NoteEditor noteEditorPanel = new NoteEditor();
+            noteEditorPanel.Show();
 
         }
     }
