@@ -1,4 +1,5 @@
-﻿using Repository.Models;
+﻿using NoteTakingApp.Authentication.Login;
+using Repository.Models;
 using Repository.Repository;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace NoteTakingApp.Forms
             String noteContent = txtContent.Text;
             Note note = new Note()
             {
-                UserId = 1,
+                UserId = LoginForm.publicUserId,
                 Title = noteTitle,
                 Content = noteContent,
                 CreatedAt = DateTime.Now

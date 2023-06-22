@@ -20,15 +20,13 @@ namespace NoteTakingApp.MainMenu
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-        private int userId;
 
-        public MainMenu(int userId)
+        public MainMenu()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
-            this.userId = userId;
         }
 
         //Methods
