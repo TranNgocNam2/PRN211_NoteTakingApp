@@ -28,9 +28,10 @@ namespace NoteTakingApp.Authentication.Login
             var user = userRepository.GetAll().FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(password));
             if (user is not null)
             {
+                int userId = user.UserId;
                 //Login successfully
                 this.Hide();
-                Form mainMenu = new MainMenu.MainMenu(user.Username);
+                Form mainMenu = new MainMenu.MainMenu(userId);
                 mainMenu.Show();
                 return;
             }

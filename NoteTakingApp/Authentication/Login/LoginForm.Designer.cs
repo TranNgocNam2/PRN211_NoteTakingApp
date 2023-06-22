@@ -35,8 +35,7 @@
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             btnLogin = new Button();
-            label2 = new Label();
-            btn = new Button();
+            btnSignUp = new Button();
             txtUserName = new TextBox();
             txtPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -113,28 +112,16 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
-            // label2
+            // btnSignUp
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(33, 34, 74);
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(241, 405);
-            label2.Name = "label2";
-            label2.Size = new Size(48, 25);
-            label2.TabIndex = 7;
-            label2.Text = "Exit";
-            // 
-            // btn
-            // 
-            btn.FlatStyle = FlatStyle.System;
-            btn.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btn.Location = new Point(284, 354);
-            btn.Name = "btn";
-            btn.Size = new Size(131, 41);
-            btn.TabIndex = 8;
-            btn.Text = "SIGN UP";
-            btn.UseVisualStyleBackColor = true;
+            btnSignUp.FlatStyle = FlatStyle.System;
+            btnSignUp.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSignUp.Location = new Point(284, 354);
+            btnSignUp.Name = "btnSignUp";
+            btnSignUp.Size = new Size(131, 41);
+            btnSignUp.TabIndex = 8;
+            btnSignUp.Text = "SIGN UP";
+            btnSignUp.UseVisualStyleBackColor = true;
             // 
             // txtUserName
             // 
@@ -163,8 +150,7 @@
             ClientSize = new Size(548, 493);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
-            Controls.Add(btn);
-            Controls.Add(label2);
+            Controls.Add(btnSignUp);
             Controls.Add(btnLogin);
             Controls.Add(panel2);
             Controls.Add(pictureBox3);
@@ -191,8 +177,7 @@
         private Panel panel2;
         private PictureBox pictureBox3;
         private Button btnLogin;
-        private Label label2;
-        private Button btn;
+        private Button btnSignUp;
         private TextBox txtUserName;
         private TextBox txtPassword;
     }
