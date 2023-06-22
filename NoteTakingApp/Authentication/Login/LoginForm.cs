@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteTakingApp.Authentication;
+using NoteTakingApp.Authentication.SignUp;
 
 namespace NoteTakingApp.Authentication.Login
 {
@@ -40,6 +41,13 @@ namespace NoteTakingApp.Authentication.Login
                 //Login failed
                 MessageBox.Show("You are not allowed to access this function!", "Message", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnSwitchPage_Click(object sender, EventArgs e)
+        {
+            SignUpForm signUpForm = new SignUpForm();
+            signUpForm.Show();
+            this.Hide();
         }
     }
 }
