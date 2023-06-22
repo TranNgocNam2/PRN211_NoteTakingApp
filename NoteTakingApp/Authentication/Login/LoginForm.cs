@@ -15,6 +15,8 @@ namespace NoteTakingApp.Authentication.Login
 {
     public partial class LoginForm : Form
     {
+        public static int publicUserId;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -29,9 +31,10 @@ namespace NoteTakingApp.Authentication.Login
             if (user is not null)
             {
                 int userId = user.UserId;
+                publicUserId = userId;
                 //Login successfully
                 this.Hide();
-                Form mainMenu = new MainMenu.MainMenu(userId);
+                Form mainMenu = new MainMenu.MainMenu();
                 mainMenu.Show();
                 return;
             }
