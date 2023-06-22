@@ -46,6 +46,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
+            Enabled = false;
             Name = "SignUpForm";
             Text = "SignUpForm";
             ResumeLayout(false);

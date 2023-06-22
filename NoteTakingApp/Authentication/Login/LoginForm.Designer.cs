@@ -47,7 +47,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources._1;
-            pictureBox1.Location = new Point(115, 37);
+            pictureBox1.Location = new Point(2, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(187, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -151,6 +151,7 @@
             txtPassword.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             txtPassword.Location = new Point(177, 266);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(238, 21);
             txtPassword.TabIndex = 10;
             // 
@@ -172,7 +173,6 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             ForeColor = Color.Black;
-            FormBorderStyle = FormBorderStyle.None;
             Name = "LoginForm";
             Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

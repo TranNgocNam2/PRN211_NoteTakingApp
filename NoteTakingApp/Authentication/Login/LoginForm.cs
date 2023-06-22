@@ -32,7 +32,6 @@ namespace NoteTakingApp.Authentication.Login
                 this.Hide();
                 Form mainMenu = new MainMenu.MainMenu(user.Username);
                 mainMenu.Show();
-                MessageBox.Show("Login successfully!", "Message", MessageBoxButtons.OK);
                 return;
             }
             else
