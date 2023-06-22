@@ -1,6 +1,4 @@
 using NoteTakingApp.Authentication.Login;
-using NoteTakingApp.Authentication.SignUp;
-using NoteTakingApp.MainMenu;
 
 namespace NoteTakingApp
 {
@@ -15,7 +13,7 @@ namespace NoteTakingApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new SignUpForm());
+            Application.Run(new LoginForm());
         }
     }
 }
