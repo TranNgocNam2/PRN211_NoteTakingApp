@@ -1,47 +1,46 @@
-﻿using NoteTakingApp.Authentication.Login;
-using Repository.Models;
+﻿using Repository.Models;
 using Repository.Repository;
 
 namespace NoteTakingApp.Forms
 {
-    public partial class NoteEditor : Form
+    public partial class NoteUpdateEditor : Form
     {
         NoteRepository noteRepository;
+        private Note note;
         List<Note> noteList;
 
-        public NoteEditor()
+        public NoteUpdateEditor(Note note)
         {
             InitializeComponent();
             noteRepository = new NoteRepository();
             noteList = noteRepository.GetAll();
+            this.note = note;
+
+            txtTitle.Text = note.Title;
+            txtContent.Text = note.Content;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            String noteTitle = txtTitle.Text;
-            if (string.IsNullOrEmpty(noteTitle))
+            string updateTitle = txtTitle.Text;
+            string updateContent = txtContent.Text;
+            if (string.IsNullOrEmpty(updateTitle))
             {
                 MessageBox.Show("Must provide a note title !");
                 return;
             }
-            if (noteList.Any(note => note.Title == noteTitle))
+            if (noteList.Any(note => note.Title == updateTitle))
             {
                 MessageBox.Show("This note title has already existed !");
                 return;
             }
-            String noteContent = txtContent.Text;
-            Note note = new Note()
-            {
-                UserId = LoginForm.publicUserId,
-                Title = noteTitle,
-                Content = noteContent,
-                CreatedAt = DateTime.Now
-            };
-            noteRepository.Create(note);
+            note.Title = updateTitle;
+            note.Content = updateContent;
+            noteRepository.Update(note);
             this.Close();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             this.Close();
         }

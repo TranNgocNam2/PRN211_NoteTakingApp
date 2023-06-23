@@ -1,17 +1,7 @@
-﻿
-using Microsoft.Identity.Client;
-using NoteTakingApp.Authentication.Login;
+﻿using NoteTakingApp.Authentication.Login;
 using Repository.Models;
 using Repository.Repository;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace NoteTakingApp.Forms
 {
@@ -61,10 +51,11 @@ namespace NoteTakingApp.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Hide();
             NoteEditor noteEditorPanel = new NoteEditor();
-            noteEditorPanel.Show();
-
+            noteEditorPanel.ShowDialog();
+            noteList = noteRepository.GetAll().Where(note =>
+                        note.UserId == LoginForm.publicUserId).ToList();
+            dgvListNote.DataSource = noteList;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -76,7 +67,7 @@ namespace NoteTakingApp.Forms
                 string noteTitle = selectedRow.Cells[0].Value.ToString();
                 Note note = noteList.FirstOrDefault(entity => entity.Title.Equals(noteTitle));
 
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this note: " + noteTitle 
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this note: " + noteTitle
                     + "?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 
@@ -86,7 +77,7 @@ namespace NoteTakingApp.Forms
 
                     if (isDeleted)
                     {
-                        noteList = noteRepository.GetAll().Where(note => 
+                        noteList = noteRepository.GetAll().Where(note =>
                         note.UserId == LoginForm.publicUserId).ToList();
                         dgvListNote.DataSource = noteList;
                         MessageBox.Show("Deleted successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -96,11 +87,44 @@ namespace NoteTakingApp.Forms
                         MessageBox.Show("Deletion failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else 
+                else if (result == DialogResult.No)
+                {
+                    return;
+                }
+                else
                 {
                     MessageBox.Show("Please select a note tilte to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }    
+                }
             }
+        }
+
+        private int lastClickedRowIndex = -1;
+        private int lastClickedColumnIndex = -1;
+
+        private void dgvListNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && dgvListNote.Columns[e.ColumnIndex].Index == 0)
+            {
+                if (e.RowIndex == lastClickedRowIndex && e.ColumnIndex == lastClickedColumnIndex)
+                {
+                    DataGridViewRow selectedRow = dgvListNote.Rows[e.RowIndex];
+                    string noteTitle = selectedRow.Cells[0].Value.ToString();
+                    Note note = noteList.FirstOrDefault(entity => entity.Title.Equals(noteTitle));
+
+                    // Open the NoteUpdateEditor form and pass the selected note as a parameter
+                    NoteUpdateEditor updateForm = new NoteUpdateEditor(note);
+                    updateForm.ShowDialog();
+
+                    // Refresh the DataGridView after the update form is closed
+                    noteList = noteRepository.GetAll().Where(n => n.UserId == LoginForm.publicUserId).ToList();
+                    dgvListNote.DataSource = noteList;
+                }
+
+                // Update the last clicked cell index
+                lastClickedRowIndex = e.RowIndex;
+                lastClickedColumnIndex = e.ColumnIndex;
+            }
+
         }
     }
 }

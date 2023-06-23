@@ -1,6 +1,6 @@
 ﻿namespace NoteTakingApp.Forms
 {
-    partial class NoteEditor
+    partial class NoteUpdateEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtContent = new RichTextBox();
             label1 = new Label();
             txtTitle = new TextBox();
             btnApply = new Button();
-            btnExit = new Button();
+            txtContent = new RichTextBox();
+            btnDelete = new Button();
             SuspendLayout();
-            // 
-            // txtContent
-            // 
-            txtContent.Location = new Point(12, 67);
-            txtContent.Name = "txtContent";
-            txtContent.Size = new Size(776, 299);
-            txtContent.TabIndex = 0;
-            txtContent.Text = "";
             // 
             // label1
             // 
@@ -50,7 +42,7 @@
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
             label1.Size = new Size(74, 32);
-            label1.TabIndex = 1;
+            label1.TabIndex = 0;
             label1.Text = "Title :";
             // 
             // txtTitle
@@ -58,52 +50,60 @@
             txtTitle.Location = new Point(92, 18);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(696, 23);
-            txtTitle.TabIndex = 2;
+            txtTitle.TabIndex = 1;
             // 
             // btnApply
             // 
             btnApply.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnApply.Location = new Point(538, 383);
+            btnApply.Location = new Point(537, 383);
             btnApply.Name = "btnApply";
             btnApply.Size = new Size(108, 55);
-            btnApply.TabIndex = 3;
+            btnApply.TabIndex = 4;
             btnApply.Text = "APPLY";
             btnApply.UseVisualStyleBackColor = true;
             btnApply.Click += btnApply_Click;
             // 
-            // btnExit
+            // txtContent
             // 
-            btnExit.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnExit.Location = new Point(680, 383);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(108, 55);
-            btnExit.TabIndex = 4;
-            btnExit.Text = "EXIT";
-            btnExit.UseVisualStyleBackColor = true;
-            btnExit.Click += btnExit_Click;
+            txtContent.Location = new Point(12, 67);
+            txtContent.Name = "txtContent";
+            txtContent.Size = new Size(776, 299);
+            txtContent.TabIndex = 5;
+            txtContent.Text = "";
             // 
-            // NoteEditor
+            // btnDelete
+            // 
+            btnDelete.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.Location = new Point(680, 383);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(108, 55);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "EXIT";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // NoteUpdateEditor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnExit);
+            Controls.Add(btnDelete);
+            Controls.Add(txtContent);
             Controls.Add(btnApply);
             Controls.Add(txtTitle);
             Controls.Add(label1);
-            Controls.Add(txtContent);
-            Name = "NoteEditor";
-            Text = "NoteEditor";
+            Name = "NoteUpdateEditor";
+            Text = "NoteUpdateEditor";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private RichTextBox txtContent;
         private Label label1;
         private TextBox txtTitle;
         private Button btnApply;
-        private Button btnExit;
+        private RichTextBox txtContent;
+        private Button btnDelete;
     }
 }

@@ -45,6 +45,7 @@
             dgvListNote.RowTemplate.Height = 25;
             dgvListNote.Size = new Size(776, 256);
             dgvListNote.TabIndex = 0;
+            dgvListNote.CellContentClick += dgvListNote_CellContentClick;
             // 
             // label1
             // 
