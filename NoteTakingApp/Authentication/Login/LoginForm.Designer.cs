@@ -35,7 +35,7 @@
             panel2 = new Panel();
             pictureBox3 = new PictureBox();
             btnLogin = new Button();
-            btnSignUp = new Button();
+            btnSwitchPage = new Button();
             txtUserName = new TextBox();
             txtPassword = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -112,16 +112,17 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
-            // btnSignUp
+            // btnSwitchPage
             // 
-            btnSignUp.FlatStyle = FlatStyle.System;
-            btnSignUp.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSignUp.Location = new Point(284, 354);
-            btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(131, 41);
-            btnSignUp.TabIndex = 8;
-            btnSignUp.Text = "SIGN UP";
-            btnSignUp.UseVisualStyleBackColor = true;
+            btnSwitchPage.FlatStyle = FlatStyle.System;
+            btnSwitchPage.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSwitchPage.Location = new Point(284, 354);
+            btnSwitchPage.Name = "btnSwitchPage";
+            btnSwitchPage.Size = new Size(131, 41);
+            btnSwitchPage.TabIndex = 8;
+            btnSwitchPage.Text = "SIGN UP";
+            btnSwitchPage.UseVisualStyleBackColor = true;
+            btnSwitchPage.Click += btnSwitchPage_Click;
             // 
             // txtUserName
             // 
@@ -150,7 +151,7 @@
             ClientSize = new Size(548, 493);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
-            Controls.Add(btnSignUp);
+            Controls.Add(btnSwitchPage);
             Controls.Add(btnLogin);
             Controls.Add(panel2);
             Controls.Add(pictureBox3);
@@ -177,7 +178,7 @@
         private Panel panel2;
         private PictureBox pictureBox3;
         private Button btnLogin;
-        private Button btnSignUp;
+        private Button btnSwitchPage;
         private TextBox txtUserName;
         private TextBox txtPassword;
     }
