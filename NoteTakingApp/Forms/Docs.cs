@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.Identity.Client;
+using NoteTakingApp.Authentication.Login;
 using Repository.Models;
 using Repository.Repository;
 using System;
@@ -22,7 +24,7 @@ namespace NoteTakingApp.Forms
         {
             InitializeComponent();
             noteRepository = new NoteRepository();
-            noteList = noteRepository.GetAll();
+            noteList = noteRepository.GetAll().Where(note => note.UserId == LoginForm.publicUserId).ToList();
 
             dgvListNote.AutoGenerateColumns = false;
 
@@ -63,6 +65,43 @@ namespace NoteTakingApp.Forms
             NoteEditor noteEditorPanel = new NoteEditor();
             noteEditorPanel.Show();
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dgvListNote.CurrentRow;
+
+            if (selectedRow != null)
+            {
+                int titleColumnIndex = dgvListNote.Columns["Title"].Index;
+                string noteTitle = selectedRow.Cells[titleColumnIndex].Value.ToString();
+                Note note = noteList.FirstOrDefault(entity => entity.Title.Equals(noteTitle));
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this note: " + noteTitle 
+                    + "?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+                if (result == DialogResult.Yes)
+                {
+                    bool isDeleted = noteRepository.Delete(note);
+
+                    if (isDeleted)
+                    {
+                        noteList = noteRepository.GetAll().Where(note => 
+                        note.UserId == LoginForm.publicUserId).ToList();
+                        dgvListNote.DataSource = noteList;
+                        MessageBox.Show("Deleted successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Deletion failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else 
+                {
+                    MessageBox.Show("Please select a note tilte to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }    
+            }
         }
     }
 }
