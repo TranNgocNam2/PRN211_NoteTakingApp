@@ -37,9 +37,9 @@
             panelDesktop = new Panel();
             pictureBox1 = new PictureBox();
             panelTitleBar = new Panel();
+            btnLogout = new Button();
             lblTitleChildForm = new Label();
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-            btnLogout = new Button();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHome).BeginInit();
@@ -59,7 +59,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 450);
+            panelMenu.Size = new Size(220, 634);
             panelMenu.TabIndex = 1;
             // 
             // btnDocs
@@ -139,10 +139,10 @@
             // 
             // btnHome
             // 
-            btnHome.Image = Properties.Resources._1;
-            btnHome.Location = new Point(12, 13);
+            btnHome.Image = Properties.Resources.NOTER_removebg_preview__1_;
+            btnHome.Location = new Point(27, 12);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(192, 62);
+            btnHome.Size = new Size(158, 54);
             btnHome.SizeMode = PictureBoxSizeMode.CenterImage;
             btnHome.TabIndex = 0;
             btnHome.TabStop = false;
@@ -150,21 +150,21 @@
             // 
             // panelDesktop
             // 
+            panelDesktop.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelDesktop.BackColor = Color.FromArgb(30, 34, 74);
             panelDesktop.Controls.Add(pictureBox1);
-            panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(220, 75);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(580, 375);
+            panelDesktop.Size = new Size(1233, 681);
             panelDesktop.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources._11;
-            pictureBox1.Location = new Point(192, 136);
+            pictureBox1.Image = Properties.Resources.NOTER_removebg_preview__1_;
+            pictureBox1.Location = new Point(447, 294);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(192, 62);
+            pictureBox1.Size = new Size(312, 71);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -178,9 +178,20 @@
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(220, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(580, 75);
+            panelTitleBar.Size = new Size(995, 75);
             panelTitleBar.TabIndex = 3;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown_1;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLogout.Location = new Point(873, 17);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(122, 45);
+            btnLogout.TabIndex = 2;
+            btnLogout.Text = "Log out";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // lblTitleChildForm
             // 
@@ -205,21 +216,11 @@
             iconCurrentChildForm.TabIndex = 0;
             iconCurrentChildForm.TabStop = false;
             // 
-            // btnLogout
-            // 
-            btnLogout.Location = new Point(452, 17);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(116, 45);
-            btnLogout.TabIndex = 2;
-            btnLogout.Text = "Log out";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
-            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1215, 634);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
