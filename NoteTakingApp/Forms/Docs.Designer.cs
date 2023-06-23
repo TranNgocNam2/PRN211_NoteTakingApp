@@ -39,12 +39,15 @@
             // 
             // dgvListNote
             // 
+            dgvListNote.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListNote.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListNote.Location = new Point(12, 76);
             dgvListNote.Name = "dgvListNote";
+            dgvListNote.RowHeadersWidth = 51;
             dgvListNote.RowTemplate.Height = 25;
-            dgvListNote.Size = new Size(776, 256);
+            dgvListNote.Size = new Size(776, 362);
             dgvListNote.TabIndex = 0;
+            dgvListNote.CellContentClick += dgvListNote_CellContentClick;
             // 
             // label1
             // 
@@ -76,7 +79,7 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.Location = new Point(163, 364);
+            btnAdd.Location = new Point(815, 76);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(143, 61);
             btnAdd.TabIndex = 4;
@@ -87,24 +90,26 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDelete.Location = new Point(470, 364);
+            btnDelete.Location = new Point(815, 143);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(143, 61);
             btnDelete.TabIndex = 5;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Docs
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(960, 450);
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(dgvListNote);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Docs";
             Text = "Docs";
             ((System.ComponentModel.ISupportInitialize)dgvListNote).EndInit();
