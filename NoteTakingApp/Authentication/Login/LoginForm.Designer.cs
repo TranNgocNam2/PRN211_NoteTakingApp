@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            label1 = new Label();
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -45,31 +44,20 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources._1;
-            pictureBox1.Location = new Point(2, 1);
+            pictureBox1.Image = Properties.Resources.NOTER_removebg_preview__1_;
+            pictureBox1.Location = new Point(162, 60);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(187, 62);
+            pictureBox1.Size = new Size(300, 62);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Bauhaus 93", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(202, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(130, 45);
-            label1.TabIndex = 1;
-            label1.Text = "LOGIN";
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Login;
-            pictureBox2.Location = new Point(115, 157);
+            pictureBox2.Location = new Point(124, 169);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(56, 44);
+            pictureBox2.Size = new Size(36, 25);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
@@ -93,9 +81,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Login1;
-            pictureBox3.Location = new Point(115, 246);
+            pictureBox3.Location = new Point(115, 262);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(56, 45);
+            pictureBox3.Size = new Size(45, 25);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 4;
             pictureBox3.TabStop = false;
@@ -127,7 +115,7 @@
             // 
             txtUserName.BorderStyle = BorderStyle.None;
             txtUserName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            txtUserName.Location = new Point(177, 176);
+            txtUserName.Location = new Point(177, 173);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(238, 21);
             txtUserName.TabIndex = 9;
@@ -156,7 +144,6 @@
             Controls.Add(pictureBox3);
             Controls.Add(panel1);
             Controls.Add(pictureBox2);
-            Controls.Add(label1);
             Controls.Add(pictureBox1);
             ForeColor = Color.Black;
             Name = "LoginForm";
@@ -171,7 +158,6 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label label1;
         private PictureBox pictureBox2;
         private Panel panel1;
         private Panel panel2;

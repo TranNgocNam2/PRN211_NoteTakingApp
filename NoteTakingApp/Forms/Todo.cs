@@ -25,7 +25,7 @@ namespace NoteTakingApp.Forms
             taskList = taskRepository.GetAll();
 
             dgvTasks.AutoGenerateColumns = false;
-            string[] columnNames = { "Title", "Description", "DueDate", "Done" };
+            string[] columnNames = { "Title", "Description", "DueDate", "Completed" };
 
             foreach (string columnName in columnNames)
             {
@@ -98,13 +98,13 @@ namespace NoteTakingApp.Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(todo != null)
+            if (todo != null)
             {
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this todo?", "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     taskRepository.Delete(todo);
-                    dgvTasks.DataSource = taskRepository.GetAll() ;
+                    dgvTasks.DataSource = taskRepository.GetAll();
                 }
             }
         }
