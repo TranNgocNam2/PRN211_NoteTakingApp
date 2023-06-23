@@ -54,7 +54,7 @@ namespace NoteTakingApp.Forms
                 taskRepository.Create(todo2);
                 dgvTasks.DataSource = taskRepository.GetAll();
 
-                MessageBox.Show("added successfully!");
+                MessageBox.Show("Added successfully!");
 
             }
             catch (Exception ex)

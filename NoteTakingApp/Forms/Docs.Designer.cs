@@ -39,39 +39,38 @@
             // 
             // dgvListNote
             // 
+            dgvListNote.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListNote.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListNote.Location = new Point(14, 101);
-            dgvListNote.Margin = new Padding(3, 4, 3, 4);
+            dgvListNote.Location = new Point(12, 76);
             dgvListNote.Name = "dgvListNote";
             dgvListNote.RowHeadersWidth = 51;
             dgvListNote.RowTemplate.Height = 25;
-            dgvListNote.Size = new Size(887, 341);
+            dgvListNote.Size = new Size(776, 362);
             dgvListNote.TabIndex = 0;
+            dgvListNote.CellContentClick += dgvListNote_CellContentClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(14, 27);
+            label1.Location = new Point(12, 20);
             label1.Name = "label1";
-            label1.Size = new Size(153, 41);
+            label1.Size = new Size(121, 32);
             label1.TabIndex = 1;
             label1.Text = "Find Note";
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(159, 39);
-            txtSearch.Margin = new Padding(3, 4, 3, 4);
+            txtSearch.Location = new Point(139, 29);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(649, 27);
+            txtSearch.Size = new Size(568, 23);
             txtSearch.TabIndex = 2;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(815, 40);
-            btnSearch.Margin = new Padding(3, 4, 3, 4);
+            btnSearch.Location = new Point(713, 30);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(86, 31);
+            btnSearch.Size = new Size(75, 23);
             btnSearch.TabIndex = 3;
             btnSearch.Text = "search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -80,10 +79,9 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.Location = new Point(185, 450);
-            btnAdd.Margin = new Padding(3, 4, 3, 4);
+            btnAdd.Location = new Point(815, 76);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(163, 81);
+            btnAdd.Size = new Size(143, 61);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
@@ -92,19 +90,19 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDelete.Location = new Point(483, 450);
-            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Location = new Point(815, 143);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(163, 81);
+            btnDelete.Size = new Size(143, 61);
             btnDelete.TabIndex = 5;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Docs
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(960, 450);
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Controls.Add(btnSearch);
@@ -112,7 +110,6 @@
             Controls.Add(label1);
             Controls.Add(dgvListNote);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Docs";
             Text = "Docs";
             ((System.ComponentModel.ISupportInitialize)dgvListNote).EndInit();
