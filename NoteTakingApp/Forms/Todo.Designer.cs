@@ -51,6 +51,7 @@
             btnDone.TabIndex = 21;
             btnDone.Text = "Done";
             btnDone.UseVisualStyleBackColor = true;
+            btnDone.Click += btnDone_Click;
             // 
             // btnDelete
             // 

@@ -108,5 +108,23 @@ namespace NoteTakingApp.Forms
                 }
             }
         }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (todo.Completed != true)
+                {
+                    todo.Completed = true;
+                    taskRepository.Update(todo);
+                    dgvTasks.DataSource = taskRepository.GetAll();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Don't try anything stupid");
+            }
+        }
     }
 }
