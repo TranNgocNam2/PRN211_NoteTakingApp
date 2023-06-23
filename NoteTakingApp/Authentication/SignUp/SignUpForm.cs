@@ -28,15 +28,12 @@ namespace NoteTakingApp.Authentication.SignUp
 
             if (password == confirmPassword)
             {
-                // Kiểm tra xem người dùng đã tồn tại trong cơ sở dữ liệu hay chưa
                 var existingUser = userRepository.GetAll().FirstOrDefault(x => x.Username.Equals(username));
                 if (existingUser != null)
                 {
-                    MessageBox.Show("Người dùng đã tồn tại trong cơ sở dữ liệu.");
+                    MessageBox.Show("User already exists !");
                     return;
                 }
-
-                // Thực hiện thêm người dùng mới vào cơ sở dữ liệu
                 User newUser = new User()
                 {
                     Username = username,
@@ -44,15 +41,14 @@ namespace NoteTakingApp.Authentication.SignUp
                 };
 
                 userRepository.Create(newUser);
-                // Thực hiện chuyển về trang đăng nhập
-                // Hiển thị form đăng nhập và ẩn form đăng ký
+
                 LoginForm loginForm = new LoginForm();
                 loginForm.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Mật khẩu và mật khẩu xác nhận không khớp. Vui lòng nhập lại.");
+                MessageBox.Show("");
             }
 
         }
