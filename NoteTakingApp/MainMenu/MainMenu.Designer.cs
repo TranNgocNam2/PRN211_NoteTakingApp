@@ -31,7 +31,6 @@
             panelMenu = new Panel();
             btnDocs = new FontAwesome.Sharp.IconButton();
             btnTodo = new FontAwesome.Sharp.IconButton();
-            btnSearchPage = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnHome = new PictureBox();
             panelDesktop = new Panel();
@@ -52,9 +51,9 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(31, 30, 68);
+            panelMenu.Controls.Add(btnLogout);
             panelMenu.Controls.Add(btnDocs);
             panelMenu.Controls.Add(btnTodo);
-            panelMenu.Controls.Add(btnSearchPage);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
@@ -73,10 +72,10 @@
             btnDocs.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDocs.IconSize = 32;
             btnDocs.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDocs.Location = new Point(0, 245);
+            btnDocs.Location = new Point(0, 236);
             btnDocs.Name = "btnDocs";
             btnDocs.Padding = new Padding(10, 0, 20, 0);
-            btnDocs.Size = new Size(220, 60);
+            btnDocs.Size = new Size(220, 111);
             btnDocs.TabIndex = 3;
             btnDocs.Text = "Docs";
             btnDocs.TextAlign = ContentAlignment.MiddleLeft;
@@ -95,38 +94,16 @@
             btnTodo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnTodo.IconSize = 32;
             btnTodo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTodo.Location = new Point(0, 185);
+            btnTodo.Location = new Point(0, 125);
             btnTodo.Name = "btnTodo";
             btnTodo.Padding = new Padding(10, 0, 20, 0);
-            btnTodo.Size = new Size(220, 60);
+            btnTodo.Size = new Size(220, 111);
             btnTodo.TabIndex = 2;
             btnTodo.Text = "Todo";
             btnTodo.TextAlign = ContentAlignment.MiddleLeft;
             btnTodo.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTodo.UseVisualStyleBackColor = true;
             btnTodo.Click += btnTodo_Click_1;
-            // 
-            // btnSearchPage
-            // 
-            btnSearchPage.Dock = DockStyle.Top;
-            btnSearchPage.FlatAppearance.BorderSize = 0;
-            btnSearchPage.FlatStyle = FlatStyle.Flat;
-            btnSearchPage.ForeColor = Color.Gainsboro;
-            btnSearchPage.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            btnSearchPage.IconColor = Color.DarkGray;
-            btnSearchPage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSearchPage.IconSize = 32;
-            btnSearchPage.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSearchPage.Location = new Point(0, 125);
-            btnSearchPage.Name = "btnSearchPage";
-            btnSearchPage.Padding = new Padding(10, 0, 20, 0);
-            btnSearchPage.Size = new Size(220, 60);
-            btnSearchPage.TabIndex = 1;
-            btnSearchPage.Text = "Search";
-            btnSearchPage.TextAlign = ContentAlignment.MiddleLeft;
-            btnSearchPage.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSearchPage.UseVisualStyleBackColor = true;
-            btnSearchPage.Click += btnSearchPage_Click_1;
             // 
             // panelLogo
             // 
@@ -142,7 +119,7 @@
             btnHome.Image = Properties.Resources.NOTER_removebg_preview__1_;
             btnHome.Location = new Point(27, 12);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(158, 54);
+            btnHome.Size = new Size(187, 54);
             btnHome.SizeMode = PictureBoxSizeMode.CenterImage;
             btnHome.TabIndex = 0;
             btnHome.TabStop = false;
@@ -162,7 +139,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.NOTER_removebg_preview__1_;
-            pictureBox1.Location = new Point(447, 294);
+            pictureBox1.Location = new Point(369, 220);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(312, 71);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -172,7 +149,6 @@
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
-            panelTitleBar.Controls.Add(btnLogout);
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
             panelTitleBar.Dock = DockStyle.Top;
@@ -184,10 +160,12 @@
             // 
             // btnLogout
             // 
-            btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnLogout.Location = new Point(873, 17);
+            btnLogout.Dock = DockStyle.Bottom;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.ForeColor = SystemColors.Control;
+            btnLogout.Location = new Point(0, 589);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(122, 45);
+            btnLogout.Size = new Size(220, 45);
             btnLogout.TabIndex = 2;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = true;
@@ -242,7 +220,6 @@
         private Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnDocs;
         private FontAwesome.Sharp.IconButton btnTodo;
-        private FontAwesome.Sharp.IconButton btnSearchPage;
         private Panel panelLogo;
         private PictureBox btnHome;
         private Panel panelDesktop;
