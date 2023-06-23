@@ -53,6 +53,7 @@ namespace NoteTakingApp.Forms
         {
             NoteEditor noteEditorPanel = new NoteEditor();
             noteEditorPanel.ShowDialog();
+
             noteList = noteRepository.GetAll().Where(note =>
                         note.UserId == LoginForm.publicUserId).ToList();
             dgvListNote.DataSource = noteList;
@@ -80,7 +81,6 @@ namespace NoteTakingApp.Forms
                         noteList = noteRepository.GetAll().Where(note =>
                         note.UserId == LoginForm.publicUserId).ToList();
                         dgvListNote.DataSource = noteList;
-                        MessageBox.Show("Deleted successfully !", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -98,8 +98,8 @@ namespace NoteTakingApp.Forms
             }
         }
 
-        private int lastClickedRowIndex = -1;
-        private int lastClickedColumnIndex = -1;
+        private int lastClickedRowIndex = 0;
+        private int lastClickedColumnIndex = 0;
 
         private void dgvListNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -110,12 +110,9 @@ namespace NoteTakingApp.Forms
                     DataGridViewRow selectedRow = dgvListNote.Rows[e.RowIndex];
                     string noteTitle = selectedRow.Cells[0].Value.ToString();
                     Note note = noteList.FirstOrDefault(entity => entity.Title.Equals(noteTitle));
-
-                    // Open the NoteUpdateEditor form and pass the selected note as a parameter
                     NoteUpdateEditor updateForm = new NoteUpdateEditor(note);
                     updateForm.ShowDialog();
 
-                    // Refresh the DataGridView after the update form is closed
                     noteList = noteRepository.GetAll().Where(n => n.UserId == LoginForm.publicUserId).ToList();
                     dgvListNote.DataSource = noteList;
                 }
@@ -124,7 +121,6 @@ namespace NoteTakingApp.Forms
                 lastClickedRowIndex = e.RowIndex;
                 lastClickedColumnIndex = e.ColumnIndex;
             }
-
         }
     }
 }

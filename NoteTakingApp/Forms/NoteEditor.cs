@@ -24,7 +24,7 @@ namespace NoteTakingApp.Forms
                 MessageBox.Show("Must provide a note title !");
                 return;
             }
-            if (noteList.Any(note => note.Title == noteTitle))
+            if (noteList.Any(note => note.Title == noteTitle && note.UserId == LoginForm.publicUserId))
             {
                 MessageBox.Show("This note title has already existed !");
                 return;

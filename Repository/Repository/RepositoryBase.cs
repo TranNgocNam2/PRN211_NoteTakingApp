@@ -46,7 +46,5 @@ namespace NoteTakingApp.Repository
             tracker.State = EntityState.Modified;
             _context.SaveChanges(true);
         }
-
-
     }
 }

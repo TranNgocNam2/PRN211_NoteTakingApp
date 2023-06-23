@@ -39,9 +39,11 @@
             // 
             // dgvListNote
             // 
+            dgvListNote.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListNote.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvListNote.Location = new Point(12, 76);
             dgvListNote.Name = "dgvListNote";
+            dgvListNote.ReadOnly = true;
             dgvListNote.RowTemplate.Height = 25;
             dgvListNote.Size = new Size(776, 256);
             dgvListNote.TabIndex = 0;
