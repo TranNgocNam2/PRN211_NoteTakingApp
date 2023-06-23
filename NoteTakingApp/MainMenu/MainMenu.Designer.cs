@@ -37,6 +37,7 @@
             panelDesktop = new Panel();
             pictureBox1 = new PictureBox();
             panelTitleBar = new Panel();
+            btnLogout = new Button();
             lblTitleChildForm = new Label();
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panelMenu.SuspendLayout();
@@ -171,6 +172,7 @@
             // panelTitleBar
             // 
             panelTitleBar.BackColor = Color.FromArgb(26, 25, 62);
+            panelTitleBar.Controls.Add(btnLogout);
             panelTitleBar.Controls.Add(lblTitleChildForm);
             panelTitleBar.Controls.Add(iconCurrentChildForm);
             panelTitleBar.Dock = DockStyle.Top;
@@ -179,6 +181,17 @@
             panelTitleBar.Size = new Size(995, 75);
             panelTitleBar.TabIndex = 3;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown_1;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnLogout.Location = new Point(873, 17);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(122, 45);
+            btnLogout.TabIndex = 2;
+            btnLogout.Text = "Log out";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // lblTitleChildForm
             // 
@@ -237,5 +250,6 @@
         private Panel panelTitleBar;
         private Label lblTitleChildForm;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
+        private Button btnLogout;
     }
 }

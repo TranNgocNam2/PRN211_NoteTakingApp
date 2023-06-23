@@ -140,6 +140,12 @@ namespace NoteTakingApp.MainMenu
             Reset();
         }
 
-
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm.publicUserId = 0;
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }
