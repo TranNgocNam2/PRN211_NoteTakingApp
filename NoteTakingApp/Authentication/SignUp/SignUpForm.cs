@@ -25,9 +25,9 @@ namespace NoteTakingApp.Authentication.SignUp
             string username = txtUserName.Text;
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
-            if(username == null || username.Equals("") || password.Equals("") || password == null ||  confirmPassword == null|| confirmPassword.Equals(""))
+            if (username == null || username.Equals("") || password.Equals("") || password == null || confirmPassword == null || confirmPassword.Equals(""))
             {
-                MessageBox.Show("User already exists !");
+                MessageBox.Show("Invalid data !");
                 return;
             }
 
@@ -56,6 +56,13 @@ namespace NoteTakingApp.Authentication.SignUp
                 MessageBox.Show("Password and confirmation password do not match. Please re-enter!");
             }
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }
