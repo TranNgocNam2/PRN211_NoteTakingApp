@@ -1,5 +1,4 @@
 using NoteTakingApp.Authentication.Login;
-using NoteTakingApp.MainMenu;
 
 namespace NoteTakingApp
 {
