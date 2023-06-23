@@ -170,11 +170,11 @@
             // btnLogin
             // 
             btnLogin.Anchor = AnchorStyles.None;
-            btnLogin.Location = new Point(273, 352);
+            btnLogin.Location = new Point(12, 12);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(102, 47);
             btnLogin.TabIndex = 17;
-            btnLogin.Text = "Login";
+            btnLogin.Text = "Back";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
