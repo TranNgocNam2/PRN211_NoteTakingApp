@@ -73,8 +73,7 @@ namespace NoteTakingApp.Forms
 
             if (selectedRow != null)
             {
-                int titleColumnIndex = dgvListNote.Columns["Title"].Index;
-                string noteTitle = selectedRow.Cells[titleColumnIndex].Value.ToString();
+                string noteTitle = selectedRow.Cells[0].Value.ToString();
                 Note note = noteList.FirstOrDefault(entity => entity.Title.Equals(noteTitle));
 
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this note: " + noteTitle 
